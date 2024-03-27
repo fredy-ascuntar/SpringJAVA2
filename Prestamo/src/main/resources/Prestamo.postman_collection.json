@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "befe74eb-110d-40d1-a7f8-1efd889c2f14",
+		"name": "Prestamo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33412200"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clientId\": null,\r\n  \"nombre\": \"tyyyyj\",\r\n  \"apellido\": \"Asc\",\r\n  \"direccion\": \"Calle Principal 123\",\r\n  \"telefono\": \"5551234\",\r\n  \"email\": \"juan@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prestamos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"loanId\": null,\r\n    \"cliente\": {\r\n        \"clientId\": 6\r\n    },\r\n    \"monto\": 10000.00,\r\n    \"tasaInteres\": 5.5,\r\n    \"plazo\": 12,\r\n    \"fechaInicio\": \"2024-03-22\",\r\n    \"estado\": \"Activo\"\r\n\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/prestamos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prestamos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clientId\": 5,\r\n  \"nombre\": \"Fredy\",\r\n  \"apellido\": \"Ascuntar\",\r\n  \"direccion\": \"Cuatro Esq\",\r\n  \"telefono\": \"3188091024\",\r\n  \"email\": \"Fredy@correo.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clientId\": null,\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"Pérez\",\r\n  \"direccion\": \"Calle Principal 123\",\r\n  \"telefono\": \"5551234\",\r\n  \"email\": \"juan@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clientes/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prestamo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clientId\": null,\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"Pérez\",\r\n  \"direccion\": \"Calle Principal 123\",\r\n  \"telefono\": \"5551234\",\r\n  \"email\": \"juan@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clientes/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PrestamoByLoanId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clientId\": null,\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"Pérez\",\r\n  \"direccion\": \"Calle Principal 123\",\r\n  \"telefono\": \"5551234\",\r\n  \"email\": \"juan@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/prestamos?loanId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prestamos"
+					],
+					"query": [
+						{
+							"key": "loanId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClientesByName",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:8080/clientes?nombre=Fredy",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Fredy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clientId\": null,\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"Pérez\",\r\n  \"direccion\": \"Calle Principal 123\",\r\n  \"telefono\": \"5551234\",\r\n  \"email\": \"juan@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clientes/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/libros/3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\":\"libro de FFAA\",\r\n    \"autor\": \"Ascuntar AF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/libros/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"libros",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
